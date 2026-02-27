@@ -1,0 +1,192 @@
+/* CSS básico con apariencia antigua */
+body {
+    font-family: "Courier New", monospace;
+    font-size: 12px;
+    margin: 10px;
+    background-color: #c0c0c0;
+    color: #000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 18px;
+    margin: 5px 0;
+    text-align: center;
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+}
+
+h2 {
+    font-size: 14px;
+    margin: 10px 0 5px 0;
+    border-bottom: 1px solid #000;
+}
+
+h3 {
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.panel {
+    margin: 10px 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #e0e0e0;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+}
+
+.tabs {
+    display: flex;
+    border-bottom: 2px solid #000;
+    margin-bottom: 10px;
+}
+
+.tab-button {
+    padding: 5px 10px;
+    margin-right: 2px;
+    background-color: #d0d0d0;
+    border: 1px solid #000;
+    border-bottom: none;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.tab-button:hover {
+    background-color: #e0e0e0;
+}
+
+.tab-button.active {
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+    padding: 10px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.form-section {
+    border: 1px solid #000;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+}
+
+.form-group {
+    margin-bottom: 8px;
+}
+
+.form-group label {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 300px;
+    padding: 2px;
+    border: 1px solid #000;
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+}
+
+.form-group textarea {
+    width: 400px;
+}
+
+.button-group {
+    margin-top: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    background-color: #d0d0d0;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-size: 11px;
+    font-family: "Courier New", monospace;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+button:active {
+    background-color: #c0c0c0;
+}
+
+.table-section {
+    margin-top: 10px;
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+}
+
+table th,
+table td {
+    border: 1px solid #000;
+    padding: 3px 5px;
+    text-align: left;
+}
+
+table th {
+    background-color: #d0d0d0;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+table tr:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+.text-area-section {
+    margin-top: 10px;
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+.text-area-section textarea {
+    width: 100%;
+    border: 1px solid #000;
+    padding: 5px;
+    font-family: "Courier New", monospace;
+    font-size: 11px;
+    background-color: #fff;
+}
+
+.stats {
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #e0e0e0;
+    border: 1px solid #000;
+    font-size: 11px;
+}

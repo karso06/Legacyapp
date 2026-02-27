@@ -1,0 +1,11 @@
+{
+  "name": "legacyapp-serverless",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "mongodb": "^6.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2"
+  }
+}

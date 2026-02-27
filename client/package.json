@@ -1,0 +1,14 @@
+{
+  "name": "legacyapp-client",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "mongodb": "^7.0.0"
+  }
+}
