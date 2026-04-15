@@ -9,6 +9,7 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
+    "legacyapp-serverless": "file:..",
     "mongodb": "^7.0.0"
   }
 }

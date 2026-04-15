@@ -485,6 +485,35 @@ async function loadReports() {
   el<HTMLAnchorElement>("exportCsvBtn").href = "/api/export/tasks.csv";
 }
 
+async function showSection(sectionId: string) {
+  document.querySelectorAll(".section-pane").forEach((pane) => {
+    pane.classList.remove("active");
+  });
+
+  document.querySelectorAll(".section-btn").forEach((button) => {
+    button.classList.remove("active");
+  });
+
+  const targetPane = document.getElementById(sectionId);
+  if (targetPane) {
+    targetPane.classList.add("active");
+  }
+
+  const targetButton = document.querySelector(
+    `.section-btn[data-section-target="${sectionId}"]`,
+  );
+  if (targetButton) {
+    targetButton.classList.add("active");
+  }
+
+  if (sectionId === "tasksTab") await loadTasks();
+  if (sectionId === "projectsTab") await loadProjectsTable();
+  if (sectionId === "commentsTab") await loadComments();
+  if (sectionId === "historyTab") await loadHistory();
+  if (sectionId === "notificationsTab") await loadNotifications();
+  if (sectionId === "reportsTab") await loadReports();
+}
+
 function bindEvents() {
   el<HTMLButtonElement>("loginBtn").addEventListener("click", () =>
     login().catch((e) => showToast(e.message)),
@@ -534,21 +563,15 @@ function bindEvents() {
     searchTasks().catch((e) => showToast(e.message)),
   );
 
-  document.querySelectorAll('[data-bs-toggle="tab"]').forEach((tab) => {
-    tab.addEventListener("shown.bs.tab", async (event) => {
-      const target = (event.target as HTMLElement).getAttribute(
-        "data-bs-target",
+  document.querySelectorAll(".section-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      const sectionId = (button as HTMLElement).getAttribute(
+        "data-section-target",
       );
-      try {
-        if (target === "#tasksTab") await loadTasks();
-        if (target === "#projectsTab") await loadProjectsTable();
-        if (target === "#commentsTab") await loadComments();
-        if (target === "#historyTab") await loadHistory();
-        if (target === "#notificationsTab") await loadNotifications();
-        if (target === "#reportsTab") await loadReports();
-      } catch (error) {
-        showToast((error as Error).message);
-      }
+      if (!sectionId) return;
+      showSection(sectionId).catch((error) =>
+        showToast((error as Error).message),
+      );
     });
   });
 }

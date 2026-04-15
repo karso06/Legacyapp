@@ -2,11 +2,14 @@
   "name": "legacyapp-serverless",
   "private": true,
   "type": "module",
+  "scripts": {
+    "start": "npm --prefix client install && npm --prefix server install && npm --prefix client run build && npm --prefix server run build && npm --prefix server start"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.21.2",
     "legacyapp-serverless": "file:",
-    "mongodb": "^6.11.0"
+    "mongodb": "^7.1.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",

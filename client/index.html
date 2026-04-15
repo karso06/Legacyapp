@@ -13,51 +13,46 @@
     />
     <style>
       :root {
-        --bs-primary: #d63384;
-        --bs-secondary: #e83e8c;
-        --bs-success: #f06595;
-        --bs-info: #f783ac;
-        --bs-danger: #c2255c;
-        --bs-warning: #ff99c8;
-        --bs-light: #fff0f6;
-        --bs-body-bg: #fff0f6;
-        --bs-body-color: #4a154b;
-        --bs-border-color: #f3b6d4;
-        --bs-link-color: #d63384;
-        --bs-link-hover-color: #ad1457;
-        --pink-900: #4a154b;
-        --pink-800: #6f1d6b;
-        --pink-700: #8d2a7d;
-        --pink-600: #ad2e89;
-        --pink-500: #d63384;
-        --pink-400: #e85d9b;
-        --pink-300: #f3a0c4;
-        --pink-200: #f8c7dc;
-        --pink-150: #fde4ef;
-        --pink-100: #fff0f6;
-        --shadow-strong: 0 20px 40px rgba(214, 51, 132, 0.2);
-        --shadow-soft: 0 10px 24px rgba(214, 51, 132, 0.12);
-        --shadow-light: 0 6px 16px rgba(214, 51, 132, 0.08);
+        --bs-primary: #7fbf7f;
+        --bs-secondary: #8db9e8;
+        --bs-success: #95d5b2;
+        --bs-info: #b8ddf6;
+        --bs-danger: #7da7c7;
+        --bs-warning: #d9efe4;
+        --bs-light: #ffffff;
+        --bs-body-bg: #f8fcff;
+        --bs-body-color: #2f4f4f;
+        --bs-border-color: #d8e8f5;
+        --bs-link-color: #5a9d76;
+        --bs-link-hover-color: #4a8764;
+        --pink-900: #2e4b5b;
+        --pink-800: #3a6278;
+        --pink-700: #4a7e68;
+        --pink-600: #5f9a83;
+        --pink-500: #7fbf7f;
+        --pink-400: #8db9e8;
+        --pink-300: #b7d8f1;
+        --pink-200: #d8e8f5;
+        --pink-150: #eaf4fb;
+        --pink-100: #ffffff;
+        --shadow-strong: none;
+        --shadow-soft: none;
+        --shadow-light: none;
       }
 
       body {
-        background: radial-gradient(
-          circle at top left,
-          #fff5fa 0%,
-          #ffe6f0 35%,
-          #ffd1e6 100%
-        );
+        background: #ffffff;
       }
 
       .card,
       .table,
-      .nav-tabs .nav-link {
+      .section-btn {
         border-color: var(--bs-border-color) !important;
       }
 
-      .nav-tabs .nav-link.active {
-        color: var(--bs-primary);
-        border-bottom-color: transparent;
+      .section-btn.active {
+        color: #fff;
+        background: #7fbf7f;
       }
 
       .btn-primary,
@@ -77,14 +72,13 @@
       }
 
       .table-striped > tbody > tr:nth-of-type(odd) > * {
-        background-color: #ffe6f0;
+        background-color: #f3f9ff;
       }
 
       h1 {
         font-weight: 800;
         color: var(--pink-900);
         letter-spacing: 0.5px;
-        text-shadow: 0 2px 0 #fff;
       }
 
       h5 {
@@ -99,46 +93,59 @@
       .card {
         border-radius: 18px;
         box-shadow: var(--shadow-soft);
-        background: linear-gradient(180deg, #ffffff 0%, #fff6fb 100%);
+        background: #ffffff;
       }
 
       .card-title {
         color: var(--pink-700);
       }
 
-      .nav-tabs {
-        border-bottom: 2px solid var(--pink-200);
+      .section-buttons {
+        display: flex;
+        flex-wrap: wrap;
         gap: 8px;
+        margin-bottom: 12px;
       }
 
-      .nav-tabs .nav-link {
-        border-radius: 12px 12px 0 0;
-        background: #fff7fb;
+      .section-btn {
+        border-radius: 12px;
+        background: #ffffff;
         color: var(--pink-700);
         font-weight: 600;
+        border: 1px solid var(--pink-200);
+        padding: 8px 14px;
       }
 
-      .nav-tabs .nav-link.active {
-        background: #fff;
-        box-shadow: 0 -6px 16px rgba(214, 51, 132, 0.15);
+      .section-btn:hover {
+        background: #edf6ff;
+        color: var(--pink-800);
       }
 
       .tab-content {
-        border-radius: 0 16px 16px 16px;
+        border-radius: 16px;
         box-shadow: var(--shadow-light);
+        background: #ffffff;
+      }
+
+      .section-pane {
+        display: none;
+      }
+
+      .section-pane.active {
+        display: block;
       }
 
       .form-control,
       .form-select {
         border-radius: 12px;
         border-color: var(--pink-200);
-        background: #fffafb;
+        background: #ffffff;
       }
 
       .form-control:focus,
       .form-select:focus {
         border-color: var(--pink-500);
-        box-shadow: 0 0 0 0.2rem rgba(214, 51, 132, 0.2);
+        box-shadow: none;
       }
 
       .btn {
@@ -148,15 +155,15 @@
       }
 
       .btn-primary {
-        background: linear-gradient(135deg, #d63384 0%, #f06595 100%);
+        background: #8db9e8;
       }
 
       .btn-success {
-        background: linear-gradient(135deg, #e83e8c 0%, #ff8fab 100%);
+        background: #7fbf7f;
       }
 
       .btn-danger {
-        background: linear-gradient(135deg, #c2255c 0%, #ff6b9a 100%);
+        background: #7da7c7;
       }
 
       .btn-outline-success,
@@ -173,18 +180,18 @@
       }
 
       .table thead th {
-        background: #ffe3f1;
+        background: #eaf4fb;
         color: var(--pink-800);
         border-bottom: 2px solid var(--pink-200);
       }
 
       .table tbody tr:hover > * {
-        background: #ffd8ea;
+        background: #e8f7ee;
         transition: background 0.2s ease;
       }
 
       .header-card {
-        background: linear-gradient(135deg, #fff0f6 0%, #ffe0ee 100%);
+        background: #ffffff;
         border: 1px solid var(--pink-200);
         border-radius: 16px;
         padding: 12px 16px;
@@ -192,7 +199,7 @@
       }
 
       .badge-soft {
-        background: #ffe3f1;
+        background: #e8f7ee;
         color: var(--pink-700);
         border-radius: 999px;
         padding: 6px 12px;
@@ -248,81 +255,60 @@
           </button>
         </div>
 
-        <ul class="nav nav-tabs" id="mainTabs" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link active"
-              data-bs-toggle="tab"
-              data-bs-target="#tasksTab"
-              type="button"
-            >
-              Tareas
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              data-bs-toggle="tab"
-              data-bs-target="#projectsTab"
-              type="button"
-            >
-              Proyectos
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              data-bs-toggle="tab"
-              data-bs-target="#commentsTab"
-              type="button"
-            >
-              Comentarios
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              data-bs-toggle="tab"
-              data-bs-target="#historyTab"
-              type="button"
-            >
-              Historial
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              data-bs-toggle="tab"
-              data-bs-target="#notificationsTab"
-              type="button"
-            >
-              Notificaciones
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              data-bs-toggle="tab"
-              data-bs-target="#searchTab"
-              type="button"
-            >
-              Búsqueda
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button
-              class="nav-link"
-              data-bs-toggle="tab"
-              data-bs-target="#reportsTab"
-              type="button"
-            >
-              Reportes
-            </button>
-          </li>
-        </ul>
+        <div class="section-buttons" id="mainButtons" role="toolbar">
+          <button
+            class="section-btn active"
+            data-section-target="tasksTab"
+            type="button"
+          >
+            Tareas
+          </button>
+          <button
+            class="section-btn"
+            data-section-target="projectsTab"
+            type="button"
+          >
+            Proyectos
+          </button>
+          <button
+            class="section-btn"
+            data-section-target="commentsTab"
+            type="button"
+          >
+            Comentarios
+          </button>
+          <button
+            class="section-btn"
+            data-section-target="historyTab"
+            type="button"
+          >
+            Historial
+          </button>
+          <button
+            class="section-btn"
+            data-section-target="notificationsTab"
+            type="button"
+          >
+            Notificaciones
+          </button>
+          <button
+            class="section-btn"
+            data-section-target="searchTab"
+            type="button"
+          >
+            Búsqueda
+          </button>
+          <button
+            class="section-btn"
+            data-section-target="reportsTab"
+            type="button"
+          >
+            Reportes
+          </button>
+        </div>
 
         <div class="tab-content border border-top-0 bg-white p-3">
-          <div class="tab-pane fade show active" id="tasksTab">
+          <div class="section-pane active" id="tasksTab">
             <div class="row g-3">
               <div class="col-lg-4">
                 <h5>Nueva / Editar tarea</h5>
@@ -414,7 +400,7 @@
             </div>
           </div>
 
-          <div class="tab-pane fade" id="projectsTab">
+          <div class="section-pane" id="projectsTab">
             <div class="row g-3">
               <div class="col-lg-4">
                 <h5>Nuevo / Editar proyecto</h5>
@@ -466,7 +452,7 @@
             </div>
           </div>
 
-          <div class="tab-pane fade" id="commentsTab">
+          <div class="section-pane" id="commentsTab">
             <h5>Comentarios</h5>
             <div class="row g-3">
               <div class="col-lg-4">
@@ -503,7 +489,7 @@
             </div>
           </div>
 
-          <div class="tab-pane fade" id="historyTab">
+          <div class="section-pane" id="historyTab">
             <h5>Historial</h5>
             <div class="table-responsive">
               <table class="table table-sm table-striped">
@@ -519,7 +505,7 @@
             </div>
           </div>
 
-          <div class="tab-pane fade" id="notificationsTab">
+          <div class="section-pane" id="notificationsTab">
             <h5>Notificaciones</h5>
             <button
               id="notificationsReadBtn"
@@ -541,7 +527,7 @@
             </div>
           </div>
 
-          <div class="tab-pane fade" id="searchTab">
+          <div class="section-pane" id="searchTab">
             <h5>Búsqueda avanzada</h5>
             <div class="row g-3">
               <div class="col-md-3">
@@ -596,7 +582,7 @@
             </div>
           </div>
 
-          <div class="tab-pane fade" id="reportsTab">
+          <div class="section-pane" id="reportsTab">
             <h5>Reportes</h5>
             <div class="row g-3">
               <div class="col-md-4">
